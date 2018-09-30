@@ -1,0 +1,16 @@
+#Default Google Cloud Configs
+
+# Todo - allow for python3?
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# / to index.html + wildcard, basic routing
+handlers:
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
